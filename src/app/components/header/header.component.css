@@ -1,6 +1,12 @@
 div{
-    background-color: blue;
+    background-color: #2187C8;
      height: 50px; 
+}
+
+app-btn-login{
+    float:right;
+    margin-top: 5px;
+
 }
 app-social{
     float: right;
