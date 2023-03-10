@@ -3,17 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { LogoAPComponent } from './components/logo-ap/logo-ap.component';
 import { SocialComponent } from './components/social/social.component';
 import { LoginComponent } from './components/login/login.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { BannerComponent } from './components/banner/banner.component';
-import { AboutComponent } from './components/about/about.component';
-import { ExperienceComponent } from './components/experience/experience.component';
-import { EducationComponent } from './components/education/education.component';
-import { ProyectsComponent } from './components/proyects/proyects.component';
+import { FooterComponent } from './footer/footer.component';
+import { BannerComponent } from './banner/banner.component';
+import { AboutComponent } from './about/about.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { EducationComponent } from './education/education.component';
+import { ProyectsComponent } from './proyects/proyects.component';
 import { BtnLoginComponent } from './components/btn-login/btn-login.component';
+import { SkillsComponent } from './skills/skills.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { BtnLoginComponent } from './components/btn-login/btn-login.component';
     ExperienceComponent,
     EducationComponent,
     ProyectsComponent,
-    BtnLoginComponent
+    BtnLoginComponent,
+    SkillsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

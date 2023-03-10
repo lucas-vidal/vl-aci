@@ -3,12 +3,16 @@ div{
      height: 50px; 
 }
 
+app-menu{
+    margin-top: 5px;
+
+}
 app-btn-login{
-    float: right;
+
     margin-top: 5px;
 
 }
 app-social{
-    float: right;
+
     margin-top: 10px;
 }
