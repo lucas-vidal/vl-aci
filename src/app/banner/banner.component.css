@@ -1,7 +1,19 @@
-div{
-    height: 250px;
-    background-color: #a721c8;
-    display: flex;
-    align-items: center;
-    justify-content: center
+.nombre {
+    height: 100px;
+    color: white;
+    font-size:xx-large;
+    font-family:  Verdana;
+    font-size: 450%;
+    
+}
+
+.img-bg {
+    background-image: url(../../assets/banner.png);
+}
+
+.img-redonda {
+    width:300px;
+    height:300px;
+    border-radius:150px;
+    border:10px solid #666;
 }
