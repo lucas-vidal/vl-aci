@@ -1,19 +1,16 @@
-.nombre {
-    height: 100px;
-    color: white;
-    font-size:xx-large;
-    font-family:  Verdana;
-    font-size: 450%;
+div {
+height: 400px;
+
     
 }
 
 .img-bg {
-    background-image: url(../../assets/banner.png);
+    background-image: url(../../assets/banner.png) ;
 }
 
 .img-redonda {
     width:300px;
     height:300px;
     border-radius:150px;
-    border:10px solid #666;
+    border:5px solid #cbc9c9;
 }
