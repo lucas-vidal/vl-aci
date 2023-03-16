@@ -11,3 +11,15 @@ div{
     color:rgb(255, 255, 255);
     opacity: 100%;
 }
+
+@media only screen and (max-width: 767px) {
+    .ocultar-menu{
+    display:none;
+    }
+}   
+    
+@media only screen and (max-width: 1023px) {
+    .ocultar-menu{
+    display:none;
+    }
+}
