@@ -4,3 +4,6 @@
 #description{
     padding: 5px;
 }
+.mayusculas{
+    text-transform: uppercase;
+}
