@@ -16,6 +16,9 @@ import { ProyectsComponent } from './proyects/proyects.component';
 import { BtnLoginComponent } from './components/btn-login/btn-login.component';
 import { SkillsComponent } from './skills/skills.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { AddExperienceComponent } from './components/add-experience/add-experience.component';
+import { AddProyectComponent } from './components/add-proyect/add-proyect.component';
+import { AddSkillComponent } from './components/add-skill/add-skill.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { MenuComponent } from './components/menu/menu.component';
     ProyectsComponent,
     BtnLoginComponent,
     SkillsComponent,
-    MenuComponent
+    MenuComponent,
+    AddExperienceComponent,
+    AddProyectComponent,
+    AddSkillComponent
   ],
   imports: [
     BrowserModule,
