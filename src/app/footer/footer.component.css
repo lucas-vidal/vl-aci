@@ -1,0 +1,23 @@
+.footer {
+    background-image: url(../../assets/banner.png) ;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footer ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .footer .social-media li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .footer .social-media i {
+    font-size: 20px;
+    color: #ea1a90;
+  }
