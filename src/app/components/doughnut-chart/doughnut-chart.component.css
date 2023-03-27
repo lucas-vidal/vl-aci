@@ -1,0 +1,31 @@
+.chart-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .chart-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .chart-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  canvas {
+    width: 200px;
+    height: 200px;
+  }
+  

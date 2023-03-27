@@ -16,9 +16,12 @@ import { ProyectsComponent } from './proyects/proyects.component';
 import { BtnLoginComponent } from './components/btn-login/btn-login.component';
 import { SkillsComponent } from './skills/skills.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { MenuFooterComponent } from './components/menu-footer/menu-footer.component';
 import { AddExperienceComponent } from './components/add-experience/add-experience.component';
 import { AddProyectComponent } from './components/add-proyect/add-proyect.component';
 import { AddSkillComponent } from './components/add-skill/add-skill.component';
+import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
+import { MenuHamburgComponent } from './components/menu-hamburg/menu-hamburg.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +39,12 @@ import { AddSkillComponent } from './components/add-skill/add-skill.component';
     BtnLoginComponent,
     SkillsComponent,
     MenuComponent,
+    MenuFooterComponent,
     AddExperienceComponent,
     AddProyectComponent,
-    AddSkillComponent
+    AddSkillComponent,
+    DoughnutChartComponent,
+    MenuHamburgComponent
   ],
   imports: [
     BrowserModule,
