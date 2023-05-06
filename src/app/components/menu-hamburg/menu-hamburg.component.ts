@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-hamburg.component.css']
 })
 export class MenuHamburgComponent {
+    isMenuOpen: boolean = false;
 
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+  }
 }
  
+

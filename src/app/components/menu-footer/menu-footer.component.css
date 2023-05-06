@@ -1,14 +1,13 @@
-div{
-    margin-top: 0px;
-}
+
 
 .cambioColor {
     color:white;
     opacity: 90%;
-
+    font-size: 16px;
+    margin-top: 5px;
 }
 .cambioColor:hover {
-    color:rgb(255, 255, 255);
+    color:rgb(214, 212, 212);
     opacity: 100%;
 }
 

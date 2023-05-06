@@ -8,11 +8,14 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class DoughnutChartComponent implements OnChanges {
 
-  @Input() percentage: number = 0;
-  @Input() color: string = '#dddd';
+  @Input() percentage: number = 10; // Inicializamos el porcentaje en 0
+  @Input() color1: string = '#ff0000';
+  @Input() color2: string = '#ff0000';
 
   ngOnChanges(changes: SimpleChanges) {
-    this.percentage = 15;
+    if (this.percentage) {
+      const randomPercentage = Math.floor(Math.random() * 101); // Generar un número aleatorio entre 0 y 100
+      this.percentage = randomPercentage;
+    }
   }
-  
 }
