@@ -7,3 +7,41 @@
 .mayusculas{
     text-transform: uppercase;
 }
+.posicion-relative {
+    position: relative;
+  }
+.img{
+    width: 20px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+.edit{
+    background-color: #cfe8fd;
+}
+
+.margin-node{
+  margin-left: 25px;
+  margin-top: -10px;
+  position: relative;
+}
+
+.point {
+  position: relative;
+  top: 18px;
+  left: -20px;
+  width: 10px;
+  height: 10px;
+  background-color: #0077B5;
+  border-radius: 50%;
+  border: 2px solid #0077B5;
+}
+
+
+.line {
+  position: absolute;
+  top: 33px; /* Altura desde la parte superior del contenedor */
+  left: -16px; /* Alineado con el punto */
+  bottom: -20px; /* Se extiende hasta la parte inferior del contenedor */
+  width: 2px;
+  background-color: #ccc;
+}

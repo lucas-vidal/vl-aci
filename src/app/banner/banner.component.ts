@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-banner',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent {
+  
+  }
 
-}
+
+
+
+

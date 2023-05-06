@@ -1,3 +1,8 @@
 .height-card{
-    height: 350px;
+    height: auto;
+}
+.img{
+    width: 20px;
+    margin-right: 10px;
+    margin-top: 0px;
 }

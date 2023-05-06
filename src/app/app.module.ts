@@ -20,9 +20,9 @@ import { MenuFooterComponent } from './components/menu-footer/menu-footer.compon
 import { AddExperienceComponent } from './components/add-experience/add-experience.component';
 import { AddProyectComponent } from './components/add-proyect/add-proyect.component';
 import { AddSkillComponent } from './components/add-skill/add-skill.component';
-import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 import { MenuHamburgComponent } from './components/menu-hamburg/menu-hamburg.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,13 +43,14 @@ import { MenuHamburgComponent } from './components/menu-hamburg/menu-hamburg.com
     AddExperienceComponent,
     AddProyectComponent,
     AddSkillComponent,
+    MenuHamburgComponent,
     DoughnutChartComponent,
-    MenuHamburgComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    BrowserModule, 
+    AppRoutingModule,
+    HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

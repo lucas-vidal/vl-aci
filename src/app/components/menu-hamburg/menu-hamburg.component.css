@@ -1,3 +1,22 @@
 .bg-lucas{
     background-color: #2187C8;
+
+
+}
+@media only screen and (max-width: 1023px) {
+    .bg-menu-sd{
+    width: 150px;
+    position: relative;
+    background-color:#2187C8;
+
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .menu-sd{
+    height: 50px;
+    width: 150px;
+    position: absolute;
+    background-color:#2187C8;
+    }
 }

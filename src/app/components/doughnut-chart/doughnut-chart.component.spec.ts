@@ -21,5 +21,3 @@ describe('DoughnutChartComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-

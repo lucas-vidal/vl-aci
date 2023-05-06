@@ -4,3 +4,11 @@
 .height-card{
     height: 150px;
 }
+img{
+    width: 20px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+.edit{
+    background-color: #cfe8fd;
+}
