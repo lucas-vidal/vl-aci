@@ -1,21 +1,21 @@
-<div class="modal fade" id="add-education-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="update-experience-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title text-primary">Agregar formacion</h5>
+          <h5 class="modal-title text-primary" id="exampleModalLabel2">Modificar datos de experiencia laboral</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
           <form>
             <div class="modal-body">
   
               <div class="mb-3">
-                <label class="form-label">Instituto:</label>
-               <input type="text" class="form-control" id="instituto" aria-describedby="emailHelp">
+                <label for="exampleInputEmail" class="form-label">Empresa:</label>
+               <input type="text" class="form-control" id="empresa" aria-describedby="emailHelp">
               </div> 
   
               <div class="mb-3">
-                <label  class="form-label">Titulo:</label>
-               <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp">
+                <label  class="form-label">Puesto:</label>
+               <input type="text" class="form-control" id="puesto" aria-describedby="emailHelp">
               </div> 
   
               <div class="mb-3">
@@ -37,13 +37,13 @@
                         <option value="10">Octubre</option>
                         <option value="11">Noviembre</option>
                         <option value="12">Diciembre</option>
-                    </select>                  
+                    </select>
                   </div>
-
-                <div class="col-6">
+  
+                  <div class="col-6 form-group">
                     <select class="form-control" id="año-fin" aria-describedby="emailHelp">
                         <option value="" class="text-secondary">Año</option>
-
+  
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
                         <option value="2021">2021</option>
@@ -145,10 +145,8 @@
                         <option value="1925">1925</option>
                         <option value="1924">1924</option>
                         <option value="1923">1923</option>
-                    </select>                 
-                </div>
-  
-
+                    </select>
+                  </div>
   
                 </div>
               </div> 
@@ -288,17 +286,14 @@
               </div> 
   
               <div class="mb-3">
-                <label  class="form-label">Estado:</label>
-                <select class="form-control" id="estado" aria-describedby="emailHelp">
-                    <option></option>
-                    <option>En curso</option>
-                    <option>Finalizado</option>
-                    <option>Incompleto</option>
-
-                  </select>              
-              </div> 
+                <label for="message-text" class="col-form-label">Descripción:</label>
+                <textarea class="form-control" id="descripcion"></textarea>
+              </div>
   
-
+              <div class="mb-3">
+                <label  class="form-label">Imagen de la compania:</label>
+                <input type="file" class="form-control" id="img-empresa" aria-describedby="emailHelp">
+              </div> 
   
             </div>
   

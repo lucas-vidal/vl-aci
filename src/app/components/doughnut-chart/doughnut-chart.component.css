@@ -1,38 +1,13 @@
 .chart-container {
   position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
 }
 
-.chart {
+.chart-value {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: inset 0 0 20px rgba(194, 8, 8, 0.1);
-  overflow: hidden;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.percentage {
-  font-size: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-weight: bold;
-  color: #000000;
-  z-index: 1;
-}
-
-.chart-hole {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 160px;
-  height: 160px;
-  background-color: #fff;
-  border-radius: 50%;
+  font-size: 30px;
+  color: black;
 }

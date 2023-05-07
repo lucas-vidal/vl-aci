@@ -1,21 +1,40 @@
-
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-doughnut-chart',
   templateUrl: './doughnut-chart.component.html',
   styleUrls: ['./doughnut-chart.component.css']
 })
-export class DoughnutChartComponent implements OnChanges {
+export class DoughnutChartComponent implements OnInit {
+  chart: any;
+  var1: number = 45; // Define and assign the var1 property
 
-  @Input() percentage: number = 10; // Inicializamos el porcentaje en 0
-  @Input() color1: string = '#ff0000';
-  @Input() color2: string = '#ff0000';
+  ngOnInit() {
+    this.createChart();
+  }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.percentage) {
-      const randomPercentage = Math.floor(Math.random() * 101); // Generar un número aleatorio entre 0 y 100
-      this.percentage = randomPercentage;
-    }
+  createChart() {
+    const canvas: any = document.getElementById('myChart');
+    const ctx = canvas.getContext('2d');
+
+    this.chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Variable 1', 'Variable 2'],
+        datasets: [{
+          data: [this.var1, 100 - this.var1], // Use this.var1
+          backgroundColor: ['red', 'grey']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false // Oculta las leyendas
+          }
+        }
+      }
+    });
   }
 }
