@@ -1,43 +1,86 @@
-<div class="modal fade" id="update-banner-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+
+
+   <div class="modal fade" id="update-banner-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="user">
+    <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-primary" id="exampleModalLabel2">Modificar datos personales</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-          <form>
+          <form (ngSubmit)="updateUser()" novalidate #f="ngForm" >
             <div class="modal-body">
   
               <div class="mb-3">
                 <label class="form-label">Nombre:</label>
-               <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+               <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name" >
               </div> 
   
               <div class="mb-3">
                 <label  class="form-label">Apellido:</label>
-               <input type="text" class="form-control" id="surname" aria-describedby="emailHelp">
+               <input type="text" class="form-control" id="surname" name="surname" aria-describedby="emailHelp" [(ngModel)]="user.surname">
               </div> 
   
               <div class="mb-3">
                 <label  class="form-label">Titular:</label>
-               <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+               <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" [(ngModel)]="user.title">
               </div> 
+
+
   
               <div class="mb-3">
-                <label  class="form-label">Skills:</label>
-               <input type="text" class="form-control" id="skills-banner" aria-describedby="emailHelp">
+                <label  class="form-label">Linkedin:</label>
+               <input type="text" class="form-control" id="linkedin" name="linkedin" name="linkedin" aria-describedby="emailHelp" [(ngModel)]="user.linkedin">
               </div> 
-  
+
               <div class="mb-3">
+                <label  class="form-label">Github:</label>
+               <input type="text" class="form-control" id="github" name="github" aria-describedby="emailHelp" [(ngModel)]="user.github">
+              </div> 
+
+              <div class="mb-3">
+                <label  class="form-label">Facebook:</label>
+               <input type="text" class="form-control" id="facebook" name="facebook" aria-describedby="emailHelp" [(ngModel)]="user.facebook">
+              </div> 
+
+              <div class="mb-3">
+                <label  class="form-label">Instagram:</label>
+               <input type="text" class="form-control" id="instagram" name="instagram" aria-describedby="emailHelp" [(ngModel)]="user.instagram">
+              </div> 
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label  class="form-label">Skill 1:</label>
+                 <input type="text" class="form-control" id="skill1" name="skill1" [(ngModel)]="user.skill1">
+                </div> 
+                <div class="col-md-3 mb-3">
+                  <label  class="form-label">Skill 2:</label>
+                 <input type="text" class="form-control" id="skill2" name="skill2" [(ngModel)]="user.skill2">
+                </div> 
+                <div class="col-md-3 mb-3">
+                  <label  class="form-label">Skill 3:</label>
+                 <input type="text" class="form-control" id="skill3" name="skill3" [(ngModel)]="user.skill3" >
+                </div> 
+                <div class="col-md-3 mb-3">
+                  <label  class="form-label">Skill 4:</label>
+                 <input type="text" class="form-control" id="skill4" name="skill4" [(ngModel)]="user.skill4">
+                </div> 
+              </div>
+
+  
+              <div class="mb-3 justify-content-start">
                 <label  class="form-label">Foto de perfil:</label>
-               <input type="file" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+               <input type="file" class="form-control" id="img" name="img" [(ngModel)]="user.img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
+              </div> 
+
+              <div class=" d-flex justify-content-center">
+                <img src={{userImageUrl}} class="img-redonda" alt=" ">
               </div> 
   
             </div>
   
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-success">Modificar</button>
+              <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Modificar</button>
             </div>
           
         </form>

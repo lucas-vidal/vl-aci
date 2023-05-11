@@ -1,56 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import Chart from 'chart.js/auto';
+import { SkillsService } from '../service/skills.service';
+import { Skills } from '../model/skills';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
+  skills: Skills[] = [];
+  intervalId: any; // Variable para almacenar el ID del intervalo
 
-}
+  constructor(public skillsService: SkillsService) { }
+  
+  ngOnInit() {
+    this.getSkills();
+    this.startChartDelay(); // Iniciar el intervalo al cargar la página
+  }
 
 
-import Chart from 'chart.js/auto';
-
-@Component({
-  selector: 'app-donut-chart',
-  template: '<canvas id="myDoughnutChart"></canvas>',
-})
-export class DonutChartComponent implements OnInit {
-  ngOnInit(): void {
-    const ctx = document.getElementById('myDoughnutChart') as HTMLCanvasElement;
-
-    const data = {
-      labels: ['Partido Azul', 'Partido Rojo'],
-      datasets: [
-        {
-          label: 'Votos',
-          data: [25, 15],
-          backgroundColor: [
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 99, 132, 0.5)',
-          ],
-          borderWidth: 1,
-        },
-      ],
-    };
-
-    const options = {
-      plugins: {
-        title: {
-          display: true,
-          text: 'Resultados de las elecciones',
-        },
-      },
-      tooltips: {
-        enabled: false,
-      },
-    };
-
-    const chart = new Chart(ctx, {
-      type: 'doughnut',
-      data: data,
-      options: options,
+  
+  getSkills(): void {
+    this.skillsService.getSkills().subscribe(data => {
+      this.skills = data;
     });
   }
+
+  startChartDelay() {
+    setTimeout(() => {
+      this.skills.forEach(skill => {
+        this.createChart(skill.skill, skill.value);
+      });
+    }, 2000); // Retraso de 2 segundos (2000 ms)
+  }
+
+  createChart(skill: string, value: number) {
+    const canvas: any = document.getElementById(skill);
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['', ''],
+          datasets: [{
+            data: [value, 100 - value],
+            backgroundColor: ['#2187C8', '#c7c7c7']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          }
+        }
+      });
+    }
+  }
+  
+  // ngOnDestroy() {
+  //   clearInterval(this.intervalId); // Detener el intervalo al salir de la página
+  // }
 }

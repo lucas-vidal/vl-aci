@@ -22,7 +22,6 @@ import { AddProyectComponent } from './components/add-proyect/add-proyect.compon
 import { AddSkillComponent } from './components/add-skill/add-skill.component';
 import { MenuHamburgComponent } from './components/menu-hamburg/menu-hamburg.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 import { UpdateEducationComponent } from './components/update-education/update-education.component';
 import { UpdateExperienceComponent } from './components/update-experience/update-experience.component';
 import { UpdateAboutComponent } from './components/update-about/update-about.component';
@@ -30,6 +29,11 @@ import { UpdateProyectComponent } from './components/update-proyect/update-proye
 import { UpdateSkillComponent } from './components/update-skill/update-skill.component';
 import { AddEducationComponent } from './components/add-education/add-education.component';
 import { UpdateBannerComponent } from './components/update-banner/update-banner.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +55,6 @@ import { UpdateBannerComponent } from './components/update-banner/update-banner.
     AddProyectComponent,
     AddSkillComponent,
     MenuHamburgComponent,
-    DoughnutChartComponent,
     UpdateEducationComponent,
     UpdateExperienceComponent,
     UpdateAboutComponent,
@@ -63,7 +66,10 @@ import { UpdateBannerComponent } from './components/update-banner/update-banner.
   imports: [
     BrowserModule, 
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { user } from '../model/users';
+import { UsersService } from '../service/users.service';
 
 
 @Component({
@@ -6,10 +8,23 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css']
 })
-export class BannerComponent {
-  
-  }
 
+
+export class BannerComponent implements OnInit {
+  user: user = new user("","","","","","","","","","","","","","","");
+    
+    constructor(public userService: UsersService){ }
+    ngOnInit(): void{
+      this.getUser('lucasvidal')
+
+    }
+
+    getUser(username: string): void{
+      this.userService.getUser(username).subscribe(data => {this.user = data;})
+    }
+
+
+  }
 
 
 

@@ -1,21 +1,24 @@
-<div class="modal fade" id="add-skill-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+
+  <div class="modal fade" id="add-skill-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-primary" id="exampleModalLabel2">Agregar skill</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-          <form>
+          <form (ngSubmit)="newSkill()">
             <div class="modal-body">
   
               <div class="mb-3">
                 <label class="form-label">Skill:</label>
-               <input type="text" class="form-control" id="proyecto" aria-describedby="emailHelp">
+               <input type="text" class="form-control" id="skill" name="skill" [(ngModel)]="skill" required>
               </div> 
   
               <div class="mb-3">
                 <label  class="form-label">Valor:</label>
-                <input type="number" class="form-control" id="link" min="0" max="100" pattern="[0-9]{1,2}|100" aria-describedby="emailHelp">
+                <input type="number" class="form-control" min="0" max="100" pattern="[0-9]{1,2}|100" id="value" name="value" [(ngModel)]="value" required>
                <label  class="form-label text-secondary">(0 a 100)</label>
 
               </div> 
@@ -23,8 +26,8 @@
             </div>
   
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Agregar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="">Cerrar</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Agregar</button>
             </div>
           
         </form>

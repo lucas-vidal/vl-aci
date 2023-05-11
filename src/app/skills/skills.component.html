@@ -15,46 +15,17 @@
             </div>
         </div>
     
-            <div class="col-md-3  mt-5 mb-2">
-                <app-doughnut-chart></app-doughnut-chart>
-                <h4 class="mt-4 text-center">HTML</h4>
-                <div class="col d-flex justify-content-center">
-                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                </div>
+        <div class="col-md-3  mt-5 mb-2" *ngFor="let Skills of skills">
+            <div class="chart-container" (load)="createChart(Skills.skill, Skills.value)">
+                <canvas id='{{Skills.skill}}'></canvas>
+                <div class="chart-value">{{Skills.value}}%</div>
+              </div>
+            <h4 class="mt-4 text-center">{{Skills.skill}}</h4>
+            <div class="col d-flex justify-content-center">
+                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"  routerLink="/skill/{{Skills.id}}"><img class="img" src="../../../assets/pencil.png" alt="" ></a>
             </div>
-            <div class="col-md-3  mt-5 mb-2">
-                <app-doughnut-chart></app-doughnut-chart>
-                <h4 class="mt-4 text-center">CSS</h4>
-                <div class="col d-flex justify-content-center">
-                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-md-3  mt-5 mb-2">
-                <app-doughnut-chart></app-doughnut-chart>
-                <h4 class="mt-4 text-center">JavaScript</h4>
-                <div class="col d-flex justify-content-center">
-                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-md-3  mt-5 mb-2">
-                <app-doughnut-chart></app-doughnut-chart>
-
-                <h4 class="mt-4 text-center">Java</h4>
-                <div class="col d-flex justify-content-center">
-                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-md-3  mt-5 mb-2">
-                <app-doughnut-chart></app-doughnut-chart>
-
-                <h4 class="mt-4 text-center">API Rest</h4>
-                <div class="col d-flex justify-content-center">
-                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                </div>
-            </div>
-             
-    </div>
-    
+        </div>
+            
 </div>
     
     

@@ -4,14 +4,14 @@
         <div class="row relative">
 
             <div class="col d-flex align-items-center justify-content-center">
-                <div class="img-redonda img-aparece"></div>
+                <img src={{user.img}} class="img-redonda img-aparece img-sombra" alt=" ">
             </div>
 
             <div class="col mt-2 d-flex justify-content-start ">
                 <div class=" align-items-center text-white margin-text">
-                  <h1 class="texto-animado-1 mt-2 mayus">Lucas Vidal</h1>
-                  <h5 class="texto-animado-2 mt-4 mayus">Full Stack Developer JR.</h5>
-                  <h3 class="texto-animado-3 mt-4 ">HTML - CSS - JavaScript - Java</h3>
+                  <h1 class="texto-animado-1 mt-2 mayus">{{user.name}} {{user.surname}}</h1>
+                  <h5 class="texto-animado-2 mt-4 mayus">{{user.title}}</h5>
+                  <h3 class="texto-animado-3 mt-4 ">{{user.skill1}} - {{user.skill2}} - {{user.skill3}} - {{user.skill4}}</h3>
    
                 </div>
             </div>

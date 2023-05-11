@@ -11,7 +11,7 @@
                 </div>
         </div>
 
-        <div class="col-md-12 mt-1 mb-1">
+        <!-- <div class="col-md-12 mt-1 mb-1">
             <div class="card p-3 d-flex justify-content-between ">
                 <div class="d-flex align-items-start">
                     <div class="col-10">
@@ -62,9 +62,24 @@
             </div>
         </div>
 
-            
+             -->
 
-
+            <div class="col-md-12 mt-1 mb-1" *ngFor="let Education of education">
+                <div class="card p-3 d-flex justify-content-between ">
+                    <div class="d-flex align-items-start">
+                        <div class="col-10">
+                            <h5 class="text-primary">{{Education.institute}}</h5>
+                            <h6>{{Education.certificate}}</h6>
+                            <div class="text-secondary">mar. 2020 - dic. 2022 | <b>{{Education.state}}</b> </div>
+                        </div>
+                        <div class="col d-flex justify-content-end ">
+                            <div class="d-flex align-items-end">
+                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-education-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
      
 
         
