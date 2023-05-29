@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { user } from 'src/app/model/users';
+import { User } from 'src/app/model/users';
 import { UsersService } from 'src/app/service/users.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { UsersService } from 'src/app/service/users.service';
   styleUrls: ['./social.component.css']
 })
 export class SocialComponent {
-  user: user = new user("","","","","","","","","","","","","","","",);
+  user: User = new User("","","","","","","","","","","","","","","",);
     
   constructor(public userService: UsersService){ }
   ngOnInit(): void{

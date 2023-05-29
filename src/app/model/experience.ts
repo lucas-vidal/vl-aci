@@ -1,6 +1,6 @@
 export class Experience {
 
-        id: number;
+        id?: number;
         position: string;
         company: string;
         form: string;

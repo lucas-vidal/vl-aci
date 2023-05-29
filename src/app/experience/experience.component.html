@@ -7,7 +7,7 @@
 
         <h2 class="text-center text-primary m-3">Experiencia Laboral</h2>
 
-        <div class="col-md-12 mt-2 mb-2" >
+        <div class="col-md-12 mt-2 mb-2" *ngIf="loginService.isLoggedIn()">
             <div>
                 <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-experience-modal"><b>+ Agregar</b></button>
             </div>
@@ -25,7 +25,7 @@
 
 
 
-    <div class="col-md-12 mt-1 mb-1">
+    <!-- <div class="col-md-12 mt-1 mb-1">
         <div class="card">
             <div class="row m-2">
                 <div class="col-md-3 d-flex align-items-start">
@@ -129,8 +129,6 @@
     
                     <div class="col ">
 
-
-
                         <div class="row">
                             <div class="col-10">
                                 <h5 class="text-secondary ">Puesto 1</h5>
@@ -150,58 +148,47 @@
                             </p>
                         </div>
                     </div>
-    
-
-    
-
-
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
 
 
 
-    <div class="col-md-12 mt-1 mb-1">
+    <div class="col-md-12 mt-1 mb-1" *ngFor="let Experience of experienceB">
         <div class=" card">
             <div class="row m-2">
                 <div class="col-md-3 d-flex align-items-center">
                     <div class=" justify-content-center">
-                        <img src="../../assets/sinteplast.png" alt="Imagen" class="img-fluid ">
+                        <img src={{Experience.img}} alt="Imagen" class="img-fluid ">
                     </div>
                 </div>
                 <div class="col-md-9 posicion-relative">
-                    <h5 class="text-primary company">Simonetta S.A.</h5>
+                    <h5 class="text-primary company">{{Experience.company}}</h5>
 
 
                     <div class="col">
                         <div class="row">
                             <div class="col-10">
-                                <h5 class="text-secondary job">Tecnico en proyectos de automatizacion industrial</h5>
+                                <h5 class="text-secondary job">{{Experience.position}}</h5>
                             </div>
 
-                            <div class="col-2 d-flex justify-content-end">
-                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-experience-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
+                            <div class="col-2 d-flex justify-content-end" *ngIf="loginService.isLoggedIn()">
+                                <a type="button"  data-bs-toggle="modal" (click)="deleteExperience(Experience.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a>
+                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-experience-modal" routerLink="/experience/{{Experience.id}}"><img class="img" src="../../../assets/pencil.png" alt=""></a>
                             </div>
                         </div>
 
                         <div>
-                            <div class="text-secondary from-to">ene. 2020 a Actualidad</div>
+                            <div class="text-secondary from-to">{{Experience.form}} - {{Experience.until}}</div>
                         
-                            <p class="justify-content-center description">
-                            Tecnico de automatizacion industrial para ingeniería y manteniemiento, programación de PLC de sistemas de 
-                            procesos automatizados, robotica ABB e industria 4.0, PLC, HMI, SCADA, Base de Datos en proyectos de automatizacion.
-                            </p>
+                            <p class="justify-content-center description">{{Experience.description}}</p>
                         </div>
                     </div>
-
-
-
                 </div>
-                
             </div>
         </div>
     </div>

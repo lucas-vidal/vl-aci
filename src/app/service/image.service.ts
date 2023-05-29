@@ -12,26 +12,40 @@ export class ImageService {
   ) { }
 
 //Subir imagenes
-  public uploadImage($event: any, name: string){
-    const file = $event.target.files[0]
-    const imgRef = ref(this.storage,"img/" + name)
-    uploadBytes(imgRef, file)
-    .then(response => {this.getImage()})
-    .catch(error => console.log(error) )
-    
-  }
+public async uploadImage($event: any, name: string): Promise<void> {
+  return new Promise<void>(async (resolve, reject) => {
+    const file = $event.target.files[0];
+    const imgRef = ref(this.storage, "img/" + name);
+    await uploadBytes(imgRef, file)
+      .then(async () => {
+        await this.getImage("img/" + name);
+        resolve();
+      })
+      .catch((error) => reject(error));
+  });
+}
 
   //Traer imagenes
-  getImage(){
-    const imagesRef = ref(this.storage, 'img')
-    list(imagesRef)
-    .then(async response => {
-      for(let item of response.items){
-        this.url = await getDownloadURL(item)
-        console.log(" UrL " + this.url)
-      }
-    })
-    .catch(error => console.log(error) )
+  async getImage(name: string): Promise<void> {
+    const imagesRef = ref(this.storage, 'img');
+    await new Promise<void>((resolve, reject) => {
+      list(imagesRef)
+        .then(async response => {
+
+          for (let item of response.items) {
+
+            if (item.fullPath === name) {
+             
+              this.url = await getDownloadURL(item);
+              console.log("Url: " + this.url);
+            }
+
+            
+          }
+          resolve();
+        })
+        .catch(error => reject(error));
+    });
   }
 }
 

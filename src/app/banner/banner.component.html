@@ -16,7 +16,7 @@
                 </div>
             </div>
               
-            <div class="col d-flex justify-content-end absolute">
+            <div class="col d-flex justify-content-end absolute" *ngIf="loginService.isLoggedIn()">
                 <div class="mt-4 d-flex align-items-start">
                     <a type="button"  data-bs-toggle="modal" data-bs-target="#update-banner-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
                 </div>

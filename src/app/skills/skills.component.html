@@ -9,20 +9,21 @@
             Skills
         </h2>  
 
-        <div class="col-md-12 mt-2 mb-2" >
+        <div class="col-md-12 mt-2 mb-2" *ngIf="loginService.isLoggedIn()">
             <div>
                 <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-skill-modal"><b>+ Agregar</b></button>
             </div>
         </div>
     
-        <div class="col-md-3  mt-5 mb-2" *ngFor="let Skills of skills">
+        <div class="col-md-2 col-sm-4 mt-5 mb-2" *ngFor="let Skills of skills">
             <div class="chart-container" (load)="createChart(Skills.skill, Skills.value)">
                 <canvas id='{{Skills.skill}}'></canvas>
                 <div class="chart-value">{{Skills.value}}%</div>
               </div>
             <h4 class="mt-4 text-center">{{Skills.skill}}</h4>
-            <div class="col d-flex justify-content-center">
-                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"  routerLink="/skill/{{Skills.id}}"><img class="img" src="../../../assets/pencil.png" alt="" ></a>
+            <div class="col d-flex justify-content-center" *ngIf="loginService.isLoggedIn()">
+                <a type="button"  data-bs-toggle="modal" (click)="deleteSkill(Skills.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a>
+                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"  [routerLink]="'/skill/' + Skills.id" ><img class="img" src="../../../assets/pencil.png" alt="" ></a>
             </div>
         </div>
             

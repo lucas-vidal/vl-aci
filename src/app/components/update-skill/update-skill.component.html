@@ -1,15 +1,15 @@
-<div class="modal fade" id="update-skill-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="update-skill-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-primary" id="exampleModalLabel2">Actualizar datos de skill</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink=""></button>
         </div>
-          <form (ngSubmit)="updateSkill()" (load)="getSkill()" novalidate #f="ngForm">
+          <form (ngSubmit)="updateSkill()"  novalidate #f="ngForm">
             <div class="modal-body">
   
               <div class="mb-3">
-                <label class="form-label">Skill:</label>{{skills.id}}
+                <label class="form-label">Skill:</label>
                <input type="text" class="form-control" id="skill" name="skill" [(ngModel)]="skills.skill">
 
               </div> 
@@ -24,8 +24,11 @@
             </div>
   
             <div class="modal-footer">
+
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="">Cerrar</button>
-              <button type="button" class="btn btn-primary">Agregar</button>
+              <button type="button" class="btn btn-success" routerLink="">Modificar</button>
+              <button type="button" class="btn btn-success" (click)="getId()">getSkill</button>
+
             </div>
           
         </form>

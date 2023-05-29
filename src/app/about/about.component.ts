@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from '../model/users';
+import { User } from '../model/users';
 import { UsersService } from '../service/users.service';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-about',
@@ -8,9 +9,10 @@ import { UsersService } from '../service/users.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  user: user = new user("","","","","","","","","","","","","","","");
+  user: User = new User("","","","","","","","","","","","","","","");
     
-    constructor(public userService: UsersService){ }
+    constructor(public userService: UsersService,
+                public loginService: LoginService){ }
     ngOnInit(): void{
       this.getUser('lucasvidal')
     }

@@ -5,76 +5,25 @@
         <h2 class="text-center text-primary m-3">Formación</h2>
 
 
-        <div class="col-md-12 mt-2 mb-2 " >
+        <div class="col-md-12 mt-2 mb-2 " *ngIf="loginService.isLoggedIn()">
                 <div>
                     <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-education-modal"><b>+ Agregar</b></button>
                 </div>
         </div>
 
-        <!-- <div class="col-md-12 mt-1 mb-1">
-            <div class="card p-3 d-flex justify-content-between ">
-                <div class="d-flex align-items-start">
-                    <div class="col-10">
-                        <h5 class="text-primary">Instituto Tecnico Superior Teclab</h5>
-                        <h6>Tecnico Superior en Programacion</h6>
-                        <div class="text-secondary">mar. 2020 - dic. 2022 | <b>Finalizado</b> </div>
-                    </div>
-                    <div class="col d-flex justify-content-end ">
-                        <div class="d-flex align-items-end">
-                            <a type="button"  data-bs-toggle="modal" data-bs-target="#update-education-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-12 mt-1 mb-1">
-            <div class="card p-3 d-flex justify-content-between">
-                <div class="d-flex align-items-start">
-                    <div class="col-10">
-                        <h5 class="text-primary">Universidad Tecnologica Nacional</h5>
-                        <h6>Ingenieria Electronica</h6>
-                        <div class="text-secondary">mar. 2008 - dic. 2014 | hasta 3er año </div>
-                    </div>
-                    <div class="col d-flex justify-content-end " >
-                        <div>
-                            <a type="button"  data-bs-toggle="modal" data-bs-target="#update-education-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-12 mt-1 mb-1">
-            <div class="card p-3 d-flex justify-content-between" >
-                <div class="d-flex align-items-start">
-                    <div class="col-10">
-                        <h5 class="text-primary">E.E.T. N° 1 de Longchamps</h5>
-                        <h6>Tecnico en Electronica</h6>
-                        <div class="text-secondary">mar. 2005 - dic. 2007 | <b>Finalizado</b> </div>
-                    </div>
-                    <div class="col d-flex justify-content-end ">
-                        <div>
-                            <a type="button"  data-bs-toggle="modal" data-bs-target="#update-education-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-             -->
-
-            <div class="col-md-12 mt-1 mb-1" *ngFor="let Education of education">
+            <div class="col-md-12 mt-1 mb-1" *ngFor="let Education of educationB">
                 <div class="card p-3 d-flex justify-content-between ">
                     <div class="d-flex align-items-start">
                         <div class="col-10">
                             <h5 class="text-primary">{{Education.institute}}</h5>
                             <h6>{{Education.certificate}}</h6>
-                            <div class="text-secondary">mar. 2020 - dic. 2022 | <b>{{Education.state}}</b> </div>
+                            <div class="text-secondary">{{Education.form}} - {{Education.until}} | <b>{{Education.state}}</b> </div>
                         </div>
-                        <div class="col d-flex justify-content-end ">
+                        <div class="col d-flex justify-content-end " *ngIf="loginService.isLoggedIn()">
                             <div class="d-flex align-items-end">
-                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-education-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
+                                <a type="button"  data-bs-toggle="modal" (click)="deleteEducation(Education.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a>
+                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-education-modal" routerLink="/education/{{Education.id}}"><img class="img" src="../../../assets/pencil.png" alt=""></a>
+
                             </div>
                         </div>
                     </div>

@@ -5,17 +5,17 @@
         <h5 class="modal-title text-primary" id="exampleModalLabel2">Agregar nueva experiencia laboral</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-        <form>
+        <form  (ngSubmit)="addExperience()" novalidate #f="ngForm">
           <div class="modal-body">
 
             <div class="mb-3">
               <label for="exampleInputEmail" class="form-label">Empresa:</label>
-             <input type="text" class="form-control" id="empresa" aria-describedby="emailHelp">
+             <input type="text" class="form-control" id="company" name="company" [(ngModel)]="company">
             </div> 
 
             <div class="mb-3">
               <label  class="form-label">Puesto:</label>
-             <input type="text" class="form-control" id="puesto" aria-describedby="emailHelp">
+             <input type="text" class="form-control" id="position" name="position" [(ngModel)]="position">
             </div> 
 
             <div class="mb-3">
@@ -23,17 +23,17 @@
               <div class="row">
 
                 <div class="col-6">
-                  <select type="text" class="form-control" id="mes-fin" aria-describedby="emailHelp">
+                  <select type="text" class="form-control" id="form_m" name="form_m" [(ngModel)]="form_m">
                       <option value="" class="text-secondary">Mes</option>
-                      <option value="1">Enero</option>
-                      <option value="2">Febrero</option>
-                      <option value="3">Marzo</option>
-                      <option value="4">Abril</option>
-                      <option value="5">Mayo</option>
-                      <option value="6">Junio</option>
-                      <option value="7">Julio</option>
-                      <option value="8">Agosto</option>
-                      <option value="9">Septiembre</option>
+                      <option value="01">Enero</option>
+                      <option value="02">Febrero</option>
+                      <option value="03">Marzo</option>
+                      <option value="04">Abril</option>
+                      <option value="05">Mayo</option>
+                      <option value="06">Junio</option>
+                      <option value="07">Julio</option>
+                      <option value="08">Agosto</option>
+                      <option value="09">Septiembre</option>
                       <option value="10">Octubre</option>
                       <option value="11">Noviembre</option>
                       <option value="12">Diciembre</option>
@@ -41,9 +41,9 @@
                 </div>
 
                 <div class="col-6 form-group">
-                  <select class="form-control" id="año-fin" aria-describedby="emailHelp">
+                  <select class="form-control" id="form_y" name="form_y" [(ngModel)]="form_y">
                       <option value="" class="text-secondary">Año</option>
-
+                      <option value="2024">2024</option>
                       <option value="2023">2023</option>
                       <option value="2022">2022</option>
                       <option value="2021">2021</option>
@@ -156,17 +156,17 @@
               <div class="row">
                 
                 <div class="col-6">
-                  <select type="text" class="form-control" id="mes-fin" aria-describedby="emailHelp">
+                  <select type="text" class="form-control" id="until_m" name="until_m" [(ngModel)]="until_m">
                       <option value="" class="text-secondary">Mes</option>
-                      <option value="1">Enero</option>
-                      <option value="2">Febrero</option>
-                      <option value="3">Marzo</option>
-                      <option value="4">Abril</option>
-                      <option value="5">Mayo</option>
-                      <option value="6">Junio</option>
-                      <option value="7">Julio</option>
-                      <option value="8">Agosto</option>
-                      <option value="9">Septiembre</option>
+                      <option value="01">Enero</option>
+                      <option value="02">Febrero</option>
+                      <option value="03">Marzo</option>
+                      <option value="04">Abril</option>
+                      <option value="05">Mayo</option>
+                      <option value="06">Junio</option>
+                      <option value="07">Julio</option>
+                      <option value="08">Agosto</option>
+                      <option value="09">Septiembre</option>
                       <option value="10">Octubre</option>
                       <option value="11">Noviembre</option>
                       <option value="12">Diciembre</option>
@@ -174,9 +174,9 @@
                 </div>
 
                 <div class="col-6 form-group">
-                  <select class="form-control" id="año-fin" aria-describedby="emailHelp">
+                  <select class="form-control" id="until_y" name="until_y" [(ngModel)]="until_y">
                       <option value="" class="text-secondary">Año</option>
-
+                      <option value="2024">2024</option>
                       <option value="2023">2023</option>
                       <option value="2022">2022</option>
                       <option value="2021">2021</option>
@@ -287,19 +287,23 @@
 
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Descripción:</label>
-              <textarea class="form-control" id="descripcion"></textarea>
+              <textarea class="form-control" id="description" name="description" [(ngModel)]="description"></textarea>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 justify-content-start">
               <label  class="form-label">Imagen de la compania:</label>
-              <input type="file" class="form-control" id="img-empresa" aria-describedby="emailHelp" accept=".jpg, .jpeg, .png">
+             <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" (change)="loadImageDOM($event)" accept=".jpg, .jpeg, .png">
+            </div> 
+
+            <div class=" d-flex justify-content-center">
+              <img src={{userImageUrl}} class="img-recortada" alt=" ">
             </div> 
 
           </div>
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Agregar</button>
+            <button type="submit" class="btn btn-primary">Agregar</button>
           </div>
         
       </form>

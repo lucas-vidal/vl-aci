@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { SkillsService } from '../service/skills.service';
 import { Skills } from '../model/skills';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-skills',
@@ -11,8 +12,10 @@ import { Skills } from '../model/skills';
 export class SkillsComponent implements OnInit {
   skills: Skills[] = [];
   intervalId: any; // Variable para almacenar el ID del intervalo
+  ids: string =  ""
 
-  constructor(public skillsService: SkillsService) { }
+  constructor(public skillsService: SkillsService,
+              public loginService: LoginService) { }
   
   ngOnInit() {
     this.getSkills();
@@ -32,7 +35,7 @@ export class SkillsComponent implements OnInit {
       this.skills.forEach(skill => {
         this.createChart(skill.skill, skill.value);
       });
-    }, 2000); // Retraso de 2 segundos (2000 ms)
+    }, 3000); // Retraso de 2 segundos (2000 ms)
   }
 
   createChart(skill: string, value: number) {
@@ -60,8 +63,11 @@ export class SkillsComponent implements OnInit {
       });
     }
   }
+
+  deleteSkill(id: number): void{
+    this.skillsService.deleteSkill(id).subscribe()
+    location.reload()
+  }
   
-  // ngOnDestroy() {
-  //   clearInterval(this.intervalId); // Detener el intervalo al salir de la página
-  // }
+
 }

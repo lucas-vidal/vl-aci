@@ -19,15 +19,7 @@ export class AddSkillComponent implements OnInit {
   newSkill(): void {
     const skill: Skills = { skill: this.skill, value: this.value };
 
-    this.skillsService.newSkill(skill).subscribe(
-      data => {
-        this.router.navigate(['']);
-      },
-      err => {
-        alert('Error al agregar un nuevo skill');
-        this.router.navigate(['']);
-
-      }
-    );
+    this.skillsService.newSkill(skill).subscribe();
+    location.reload()
   }
 }

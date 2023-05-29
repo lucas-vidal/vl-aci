@@ -10,6 +10,8 @@ import { SkillsService } from 'src/app/service/skills.service';
 })
 export class UpdateSkillComponent {
 
+  id: string = "";
+
    skills: Skills = new Skills(0, '', 0);
 
   constructor(public skillsService: SkillsService,
@@ -18,17 +20,21 @@ export class UpdateSkillComponent {
 
     
   ngOnInit(): void{
-
-
+    this.getId();
 
   }
 
 
-  getSkill(): void{
-    const id = this.activatedRouter.snapshot.params['id'];
+  getId(): void{
+     this.id = this.activatedRouter.snapshot.params['id'];
+    
+    console.log(this.id)
+    console.log(45)
+  }
+
+  getSkill(id: number): void{
     this.skillsService.getSkill(id).subscribe(data => {
       this.skills = data;
-      console.log(data)
     })
   }
 

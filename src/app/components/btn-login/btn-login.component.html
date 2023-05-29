@@ -1,7 +1,5 @@
 <div>
-    <button type="button" class="btn btn-outline-light " data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-</div>
-
-   
-    
-
+    <button *ngIf="!loginService.isLoggedIn()" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal" routerLink="/login">Login</button>
+    <button *ngIf="loginService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="logout()">Logout</button>
+  </div>
+  

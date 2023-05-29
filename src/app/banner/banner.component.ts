@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from '../model/users';
+import { User } from '../model/users';
 import { UsersService } from '../service/users.service';
+import { LoginService } from '../service/login.service';
 
 
 @Component({
@@ -11,9 +12,10 @@ import { UsersService } from '../service/users.service';
 
 
 export class BannerComponent implements OnInit {
-  user: user = new user("","","","","","","","","","","","","","","");
-    
-    constructor(public userService: UsersService){ }
+  user: User = new User("","","","","","","","","","","","","","","");
+
+    constructor(public userService: UsersService,
+                public loginService: LoginService){ }
     ngOnInit(): void{
       this.getUser('lucasvidal')
 
