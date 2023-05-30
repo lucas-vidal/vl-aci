@@ -8,63 +8,33 @@
                 Proyectos
             </h2>
 
-            <div class="col-md-12 mt-2 mb-2" >
+            <div class="col-md-12 mt-2 mb-2"  *ngIf="loginService.isLoggedIn()">
                 <div>
                     <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-proyect-modal"><b>+ Agregar</b></button>
                 </div>
             </div>
-                
-                <div class="col-md-6  mt-2 mb-2">
-                    <div class="card height-card">
-                        <img src="../../assets/Captura1.PNG" class="card-img-top " alt="..."  style="object-fit: cover;">
-                        <div class="card-body">
 
-                            <div class="row mt-2">
-                                <div class="col-10">
-                                    <h5 class="card-title text-primary">Plataforma Academica</h5>
-                                </div>
+            <div class="col-md-6  mt-2 mb-2" *ngFor="let Proyects of proyects">
+                <div class="card height-card">
+                    <img src={{Proyects.img}} class="card-img-top " alt="..."  style="object-fit: cover;">
+                    <div class="card-body">
 
-                                <div class="col-2 d-flex justify-content-end">
-                                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-proyect-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                                </div>
+                        <div class="row mt-2 justify-content-start">
+                            <div class="col-10">
+                                <h5 class="card-title text-primary">{{Proyects.title}}</h5>
                             </div>
-                            <p class="card-text mt-2">
-                                Esta es una plataforma acadmica virtual donde el alumno accede con su usuario y contraseña y puede gestionar su cursada academica.
-                                Esta es una plataforma acadmica virtual donde el alumno accede con su usuario y contraseña y puede gestionar su cursada academica.
-                                Esta es una plataforma acadmica virtual donde el alumno accede con su usuario y contraseña y puede gestionar su cursada academica.
 
-
-                            </p>
-                            <a href="#" class="btn btn-primary">Ver mas</a>
+                            <div class="col d-flex justify-content-end" *ngIf="loginService.isLoggedIn()">
+                                <a type="button"  data-bs-toggle="modal" (click)="deleteProyect(Proyects.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a>
+                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-proyect-modal"  [routerLink]="'/proyect/' + Proyects.id" ><img class="img" src="../../../assets/pencil.png" alt="" ></a>
+                            </div>
                         </div>
+                        <p class="card-text mt-2">{{Proyects.description}}</p>
+                        <a href={{Proyects.link}} class="btn btn-primary" target="_blank">Ver mas</a>
                     </div>
                 </div>
+            </div>
                 
-                <div class="col-md-6  mt-2 mb-2">
-                    <div class="card height-card">
-                        <img src="../../assets/Captura2.PNG" class="card-img-top " alt="..."  style="object-fit: cover;">
-                        <div class="card-body">
-
-                            <div class="row mt-2">
-                                <div class="col-10">
-                                    <h5 class="card-title text-primary">Terminal de Ventas</h5>
-                                </div>
-
-                                <div class="col-2 d-flex justify-content-end">
-                                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-proyect-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                                </div>
-                            </div>
-                            <p class="card-text mt-2">
-                                Esta es una plataforma acadmica virtual donde el alumno accede con su usuario y contraseña y puede gestionar su cursada academica.
-                                Esta es una plataforma acadmica virtual donde el alumno accede con su usuario y contraseña y puede gestionar su cursada academica.
-                                Esta es una plataforma acadmica virtual donde el alumno accede con su usuario y contraseña y puede gestionar su cursada academica.
-
-
-                            </p>
-                            <a href="#" class="btn btn-primary">Ver mas</a>
-                        </div>
-                    </div>
-                </div>
 
         </div>
 

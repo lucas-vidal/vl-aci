@@ -9,7 +9,7 @@ export const environment = {
     messagingSenderId: '1939159461',
   },
     production: false,
-    URLA: 'http://localhost:8080/',
+    URLa: 'http://localhost:8080/',
     URL: "https://lucas-vidal-back.onrender.com/"
 
 }

@@ -5,37 +5,39 @@
           <h5 class="modal-title text-primary" id="exampleModalLabel2">Agregar nuevo proyecto</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-          <form>
+          <form (ngSubmit)="addProyect()" novalidate #f="ngForm">
             <div class="modal-body">
   
               <div class="mb-3">
                 <label class="form-label">Proyecto:</label>
-               <input type="text" class="form-control" id="proyecto" aria-describedby="emailHelp">
+               <input type="text" class="form-control"  id="title" name="title" [(ngModel)]="title">
               </div> 
   
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Descripción:</label>
-                <textarea class="form-control" id="descripcion"></textarea>
+                <textarea class="form-control"  id="description" name="description" [(ngModel)]="description"></textarea>
               </div>
 
               <div class="mb-3">
                 <label  class="form-label">Link:</label>
-               <input type="text" class="form-control" id="link" aria-describedby="emailHelp">
-              </div> 
-  
-              <div class="mb-3">
-                <label  class="form-label">Imagen:</label>
-                <input type="file" class="form-control" id="img-empresa" aria-describedby="emailHelp">
+               <input type="text" class="form-control" id="link" name="link" [(ngModel)]="link">
               </div> 
 
+              <div class="mb-3 justify-content-start">
+                <label  class="form-label">Imagen del proyecto:</label>
+               <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" (change)="loadImageDOM($event)" accept=".jpg, .jpeg, .png">
+              </div> 
   
+              <div class=" d-flex justify-content-center">
+                <img src={{proyectImageUrl}} class="img-recortada" alt=" ">
+              </div> 
 
   
             </div>
   
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Agregar</button>
+              <button type="submit" class="btn btn-primary">Agregar</button>
             </div>
           
         </form>

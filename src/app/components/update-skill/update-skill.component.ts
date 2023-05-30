@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Skills } from 'src/app/model/skills';
+import { DataService } from 'src/app/service/data.service';
 import { SkillsService } from 'src/app/service/skills.service';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-update-skill',
@@ -10,22 +15,31 @@ import { SkillsService } from 'src/app/service/skills.service';
 })
 export class UpdateSkillComponent {
 
-  id: string = "";
+  id: any
 
    skills: Skills = new Skills(0, '', 0);
 
   constructor(public skillsService: SkillsService,
     private activatedRouter: ActivatedRoute,
-    private router: Router,){ }
+    private router: Router,
+    private dataService: DataService){ }
 
     
   ngOnInit(): void{
-    this.getId();
+
+    const skillsData = this.dataService.getSkillsData();
+    if (skillsData.length > 0) {
+      this.skills = skillsData[0];
+    }
 
   }
 
+  getId() {
+    console.log(this.skills);
+    
+  }
 
-  getId(): void{
+  getIds(): void{
      this.id = this.activatedRouter.snapshot.params['id'];
     
     console.log(this.id)
@@ -35,6 +49,7 @@ export class UpdateSkillComponent {
   getSkill(id: number): void{
     this.skillsService.getSkill(id).subscribe(data => {
       this.skills = data;
+      console.log(this.skills)
     })
   }
 

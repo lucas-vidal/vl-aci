@@ -15,7 +15,7 @@
             </div>
         </div>
     
-        <div class="col-md-2 col-sm-4 mt-5 mb-2" *ngFor="let Skills of skills">
+        <div class="col-6 col-sm-4 col-md-4 col-lg-2 mt-5 mb-2" *ngFor="let Skills of skills">
             <div class="chart-container" (load)="createChart(Skills.skill, Skills.value)">
                 <canvas id='{{Skills.skill}}'></canvas>
                 <div class="chart-value">{{Skills.value}}%</div>
@@ -23,7 +23,8 @@
             <h4 class="mt-4 text-center">{{Skills.skill}}</h4>
             <div class="col d-flex justify-content-center" *ngIf="loginService.isLoggedIn()">
                 <a type="button"  data-bs-toggle="modal" (click)="deleteSkill(Skills.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a>
-                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"  [routerLink]="'/skill/' + Skills.id" ><img class="img" src="../../../assets/pencil.png" alt="" ></a>
+                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"   (click)="updateSkills.getSkill(Skills.id!)"><img class="img" src="../../../assets/pencil.png" alt="" ></a>
+
             </div>
         </div>
             

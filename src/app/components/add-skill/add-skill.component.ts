@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './add-skill.component.html',
   styleUrls: ['./add-skill.component.css']
 })
-export class AddSkillComponent implements OnInit {
+export class AddSkillComponent {
   skill: string = '';
   value: number = 0;
 

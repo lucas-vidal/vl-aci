@@ -3,19 +3,22 @@ import Chart from 'chart.js/auto';
 import { SkillsService } from '../service/skills.service';
 import { Skills } from '../model/skills';
 import { LoginService } from '../service/login.service';
+import { UpdateSkillComponent } from '../components/update-skill/update-skill.component';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent {
   skills: Skills[] = [];
   intervalId: any; // Variable para almacenar el ID del intervalo
   ids: string =  ""
 
   constructor(public skillsService: SkillsService,
-              public loginService: LoginService) { }
+              public loginService: LoginService,
+              public updateSkills: UpdateSkillComponent,
+              ) { }
   
   ngOnInit() {
     this.getSkills();
