@@ -17,18 +17,8 @@ import { BtnLoginComponent } from './components/btn-login/btn-login.component';
 import { SkillsComponent } from './skills/skills.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuFooterComponent } from './components/menu-footer/menu-footer.component';
-import { AddExperienceComponent } from './components/add-experience/add-experience.component';
-import { AddProyectComponent } from './components/add-proyect/add-proyect.component';
-import { AddSkillComponent } from './components/add-skill/add-skill.component';
 import { MenuHamburgComponent } from './components/menu-hamburg/menu-hamburg.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateEducationComponent } from './components/update-education/update-education.component';
-import { UpdateExperienceComponent } from './components/update-experience/update-experience.component';
-import { UpdateAboutComponent } from './components/update-about/update-about.component';
-import { UpdateProyectComponent } from './components/update-proyect/update-proyect.component';
-import { UpdateSkillComponent } from './components/update-skill/update-skill.component';
-import { AddEducationComponent } from './components/add-education/add-education.component';
-import { UpdateBannerComponent } from './components/update-banner/update-banner.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
@@ -53,17 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SkillsComponent,
     MenuComponent,
     MenuFooterComponent,
-    AddExperienceComponent,
-    AddProyectComponent,
-    AddSkillComponent,
     MenuHamburgComponent,
-    UpdateEducationComponent,
-    UpdateExperienceComponent,
-    UpdateAboutComponent,
-    UpdateProyectComponent,
-    UpdateSkillComponent,
-    AddEducationComponent,
-    UpdateBannerComponent,
+
   ],
   imports: [
     BrowserModule, 

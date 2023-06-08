@@ -11,7 +11,7 @@
 
         <div class="col-md-12 mt-2 mb-2" *ngIf="loginService.isLoggedIn()">
             <div>
-                <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-skill-modal"><b>+ Agregar</b></button>
+                <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-skill-modal" (click)="cleanInputs()"><b>+ Agregar</b></button>
             </div>
         </div>
     
@@ -22,9 +22,8 @@
               </div>
             <h4 class="mt-4 text-center">{{Skills.skill}}</h4>
             <div class="col d-flex justify-content-center" *ngIf="loginService.isLoggedIn()">
-                <a type="button"  data-bs-toggle="modal" (click)="deleteSkill(Skills.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a>
-                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"   (click)="updateSkills.getSkill(Skills.id!)"><img class="img" src="../../../assets/pencil.png" alt="" ></a>
-
+                <!-- <a type="button"  data-bs-toggle="modal" (click)="deleteSkill(Skills.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a> -->
+                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-skill-modal"   (click)="getSkill(Skills.id!)"><img class="img" src="../../../assets/pencil.png" alt="" ></a>
             </div>
         </div>
             
@@ -33,5 +32,73 @@
     
 
 
+<div class="modal fade" id="update-skill-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="exampleModalLabel2">Actualizar datos de skill</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink=""></button>
+        </div>
+          <form (ngSubmit)="updateSkill()"  novalidate #f="ngForm">
+            <div class="modal-body">
+  
+              <div class="mb-3">
+                <label class="form-label">Skill:</label>
+               <input type="text" class="form-control" id="skill" name="skill" [(ngModel)]="skill" required>
+
+              </div> 
+  
+              <div class="mb-3">
+                <label  class="form-label">Valor:</label>
+                <input type="number" class="form-control" id="link" min="0" max="100" pattern="[0-9]{1,2}|100" id="value" name="value" [(ngModel)]="value" required>
+                <label  class="form-label text-secondary">(0 a 100)</label>
+
+              </div> 
+  
+            </div>
+  
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-danger" (click)="deleteSkill(id)" >Eliminar</button>
+              <button type="submit" class="btn btn-success" routerLink="">Modificar</button>
+
+            </div>
+          
+        </form>
+      </div>
+    </div>
+</div>
 
 
+<div class="modal fade" id="add-skill-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="exampleModalLabel2">Agregar skill</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <form (ngSubmit)="addSkill()">
+          <div class="modal-body">
+
+            <div class="mb-3">
+              <label class="form-label">Skill:</label>
+             <input type="text" class="form-control" id="skill" name="skill" [(ngModel)]="skill" required>
+            </div> 
+
+            <div class="mb-3">
+              <label  class="form-label">Valor:</label>
+              <input type="number" class="form-control" min="0" max="100" pattern="[0-9]{1,2}|100" id="value" name="value" [(ngModel)]="value" required>
+             <label  class="form-label text-secondary">(0 a 100)</label>
+
+            </div> 
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Agregar</button>
+          </div>
+        
+      </form>
+    </div>
+  </div>
+</div>

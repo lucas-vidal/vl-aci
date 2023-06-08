@@ -17,3 +17,37 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="update-about-modal" tabindex="-1"  aria-hidden="true" *ngIf="user">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="exampleModalLabel2">Actualizar acerca de mi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form (ngSubmit)="updateAbout()" novalidate #f="ngForm" >
+          <div class="modal-body">
+  
+
+              <div class="mb-3 ">
+                <label for="message-text" class="col-form-label">Descripcion:</label>
+                <textarea class="form-control"  id="about" name="about" [(ngModel)]="about">  
+
+                </textarea>
+              </div>
+  
+  
+            </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Modificar</button>
+            </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  

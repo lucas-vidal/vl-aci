@@ -9,19 +9,23 @@ import { LoginService } from '../service/login.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  user: User = new User("","","","","","","","","","","","","","","");
+  about: string = "";
+  user: User = new User(this.about,"","","","","","","","","","","","","","");
     
     constructor(public userService: UsersService,
                 public loginService: LoginService){ }
     ngOnInit(): void{
-      this.getUser('lucasvidal')
+      this.getAbout('lucasvidal')
     }
 
-    getUser(username: string): void{
+    getAbout(username: string): void{
       this.userService.getUser(username).subscribe(data => {
         this.user = data;
       })
     }
 
+    updateAbout(): void {
+      this.userService.updateUserJSON('lucasvidal', this.user).subscribe();
+    }
 
   }

@@ -10,7 +10,7 @@
 
             <div class="col-md-12 mt-2 mb-2"  *ngIf="loginService.isLoggedIn()">
                 <div>
-                    <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-proyect-modal"><b>+ Agregar</b></button>
+                    <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-proyect-modal" (click)="cleanInputs()"><b>+ Agregar</b></button>
                 </div>
             </div>
 
@@ -25,8 +25,8 @@
                             </div>
 
                             <div class="col d-flex justify-content-end" *ngIf="loginService.isLoggedIn()">
-                                <a type="button"  data-bs-toggle="modal" (click)="deleteProyect(Proyects.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a>
-                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-proyect-modal"  [routerLink]="'/proyect/' + Proyects.id" ><img class="img" src="../../../assets/pencil.png" alt="" ></a>
+                                <!-- <a type="button"  data-bs-toggle="modal" (click)="deleteProyect(Proyects.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a> -->
+                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-proyect-modal"  (click)="getProyect(Proyects.id!)"><img class="img" src="../../../assets/pencil.png" alt="" ></a>
                             </div>
                         </div>
                         <p class="card-text mt-2">{{Proyects.description}}</p>
@@ -39,3 +39,99 @@
         </div>
 
     </div>
+
+
+
+    <div class="modal fade" id="update-proyect-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary" id="exampleModalLabel2">Actualizar datos de proyecto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <form (ngSubmit)="updateProyect()" novalidate #f="ngForm">
+                <div class="modal-body">
+      
+                    <div class="mb-3">
+                        <label class="form-label">Proyecto:</label>
+                        <input type="text" class="form-control"  id="title" name="title" [(ngModel)]="title">
+                    </div> 
+          
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Descripción:</label>
+                        <textarea class="form-control"  id="description" name="description" [(ngModel)]="description"></textarea>
+                    </div>
+        
+                    <div class="mb-3">
+                        <label  class="form-label">Link:</label>
+                        <input type="text" class="form-control" id="link" name="link" [(ngModel)]="link">
+                    </div> 
+        
+                    <div class="mb-3 justify-content-start">
+                        <label  class="form-label">Imagen del proyecto:</label>
+                        <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" (change)="loadImageDOM($event)" accept=".jpg, .jpeg, .png">
+                    </div> 
+          
+                    <div class=" d-flex justify-content-center">
+                        <img src={{proyectImageUrl}} class="img-recortada" alt=" ">
+                    </div> 
+    
+                </div>
+      
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" (click)="deleteProyect(id)">Eliminar</button>
+                  <button type="submit" class="btn btn-success" routerLink="">Modificar</button>
+                </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="modal fade" id="add-proyect-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary" id="exampleModalLabel2">Agregar nuevo proyecto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <form (ngSubmit)="addProyect()" novalidate #f="ngForm">
+                <div class="modal-body">
+      
+                  <div class="mb-3">
+                    <label class="form-label">Proyecto:</label>
+                   <input type="text" class="form-control"  id="title" name="title" [(ngModel)]="title">
+                  </div> 
+      
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Descripción:</label>
+                    <textarea class="form-control"  id="description" name="description" [(ngModel)]="description"></textarea>
+                  </div>
+    
+                  <div class="mb-3">
+                    <label  class="form-label">Link:</label>
+                   <input type="text" class="form-control" id="link" name="link" [(ngModel)]="link">
+                  </div> 
+    
+                  <div class="mb-3 justify-content-start">
+                    <label  class="form-label">Imagen del proyecto:</label>
+                   <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" (change)="loadImageDOM($event)" accept=".jpg, .jpeg, .png">
+                  </div> 
+      
+                  <div class=" d-flex justify-content-center">
+                    <img src={{proyectImageUrl}} class="img-recortada" alt=" ">
+                  </div> 
+    
+                </div>
+      
+                <div class="modal-footer">
+
+                  <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>

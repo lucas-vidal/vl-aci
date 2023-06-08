@@ -3,7 +3,6 @@ import Chart from 'chart.js/auto';
 import { SkillsService } from '../service/skills.service';
 import { Skills } from '../model/skills';
 import { LoginService } from '../service/login.service';
-import { UpdateSkillComponent } from '../components/update-skill/update-skill.component';
 
 @Component({
   selector: 'app-skills',
@@ -13,11 +12,13 @@ import { UpdateSkillComponent } from '../components/update-skill/update-skill.co
 export class SkillsComponent {
   skills: Skills[] = [];
   intervalId: any; // Variable para almacenar el ID del intervalo
-  ids: string =  ""
+
+  id: number = 0
+  skill: string = '';
+  value: number = 0;
 
   constructor(public skillsService: SkillsService,
               public loginService: LoginService,
-              public updateSkills: UpdateSkillComponent,
               ) { }
   
   ngOnInit() {
@@ -29,8 +30,44 @@ export class SkillsComponent {
   
   getSkills(): void {
     this.skillsService.getSkills().subscribe(data => {
+
       this.skills = data;
+
     });
+  }
+
+  getSkill(id: number): void{
+
+    this.skillsService.getSkill(id).subscribe(data => {
+      this.id = id
+      this.skill = data.skill;
+      this.value = data.value;
+
+    })
+  }
+
+  deleteSkill(id: number): void{
+
+    this.skillsService.deleteSkill(id).subscribe()
+
+    location.reload()
+  }
+
+  updateSkill(): void {
+    const skill: Skills = { skill: this.skill, value: this.value };
+
+    this.skillsService.updateSkill(this.id, skill).subscribe();
+
+    location.reload()
+
+  }
+  
+  addSkill(): void {
+    const skill: Skills = { skill: this.skill, value: this.value };
+
+    this.skillsService.newSkill(skill).subscribe();
+
+    location.reload()
   }
 
   startChartDelay() {
@@ -67,10 +104,10 @@ export class SkillsComponent {
     }
   }
 
-  deleteSkill(id: number): void{
-    this.skillsService.deleteSkill(id).subscribe()
-    location.reload()
+  cleanInputs(){
+    this.id = 0
+    this.skill = "";
+    this.value = 0;
   }
-  
 
 }
