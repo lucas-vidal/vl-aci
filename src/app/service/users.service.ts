@@ -27,7 +27,7 @@ export class UsersService {
     return this.HttpClient.post<User>(this.url, user)
   }
 
-  public updateUserJSON(username: string, user: User): Observable<any> {
+  public updateUser(username: string, user: User): Observable<any> {
     const headers = { 'Content-Type': 'application/json' };
     const body = JSON.stringify(user);
     return this.HttpClient.put<any>(this.url + username, body, { headers });
