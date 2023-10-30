@@ -1,15 +1,96 @@
-.height-card{
-    height: auto;
+.bg-color1 {
+    background-color: #008FD5;
 }
-.img{
-    width: 20px;
-    margin-right: 10px;
-    margin-top: 0px;
+
+.bg-color2 {
+    background-color: #303642;
 }
-.img-recortada {
 
-    max-width:400px;
-    max-height:400px;
+.bg-color2:hover {
+    background-color: #008FD5;
+}
 
-    border:3px solid #2187C8;
+.bg-color3 {
+    background-color: #e7e7e7;
+}
+
+.color-vl1 {
+    color: #008FD5;
+}
+
+.color-vl2 {
+    color: #303642;
+}
+
+
+.posicion-relative {
+    position: relative;
+  }
+
+.color-vl {
+    color: #008FD5;
+}
+
+.margin-node{
+  margin-left: 25px;
+  margin-top: -10px;
+  position: relative;
+}
+
+.point {
+  position: relative;
+  top: 22px;
+  left: -30px;
+  width: 10px;
+  height: 10px;
+  background-color: #0077B5;
+  border-radius: 50%;
+  border: 2px solid #0077B5;
+}
+
+
+.line {
+  position: absolute;
+  top: 26px; /* Altura desde la parte superior del contenedor */
+  left: -10px; /* Alineado con el punto */
+  bottom: 15px; /* Se extiende hasta la parte inferior del contenedor */
+  width: 2px;
+  background-color: #ccc;
+}
+
+.margin {
+    margin-top: -5px;
+    margin-left: 30px;
+  }
+
+
+
+  
+  .zoom-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  img {
+    transition: transform 0.3s;
+  }
+  
+  .zoomed {
+    transform: scale(1.2);
+  }
+
+
+  
+@media only screen and (max-width: 800px) {
+  .padding {
+    padding-top: 70px; 
+    padding-bottom: 30px;
+}
+}
+
+@media only screen and (min-width: 801px) {
+  .padding {
+    padding-top: 120px; 
+    padding-bottom: 120px;
+}
 }

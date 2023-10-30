@@ -1,137 +1,268 @@
+<div class="container padding" >
 
-    <div class="container p-4">
-        <hr style="border-color: blue">    
+    <h1 class="text-center color-vl1 mb-5">Proyectos</h1>
+    <p class="text-center">Aqui presentamos algunos de los proyectos realizados.</p>
+    <div class="row">
 
-        <div class="row">
+        <div class="col-md-4 mb-4 mt-4">
+            <div class="card">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 
-            <h2 class="text-center text-primary m-3">
-                Proyectos
-            </h2>
-
-            <div class="col-md-12 mt-2 mb-2"  *ngIf="loginService.isLoggedIn()">
-                <div>
-                    <button type="button" class="btn btn-outline-primary w-100 " data-bs-toggle="modal" data-bs-target="#add-proyect-modal" (click)="cleanInputs()"><b>+ Agregar</b></button>
-                </div>
-            </div>
-
-            <div class="col-md-6  mt-2 mb-2" *ngFor="let Proyects of proyects">
-                <div class="card height-card">
-                    <img src={{Proyects.img}} class="card-img-top " alt="..."  style="object-fit: cover;">
-                    <div class="card-body">
-
-                        <div class="row mt-2 justify-content-start">
-                            <div class="col-10">
-                                <h5 class="card-title text-primary">{{Proyects.title}}</h5>
-                            </div>
-
-                            <div class="col d-flex justify-content-end" *ngIf="loginService.isLoggedIn()">
-                                <!-- <a type="button"  data-bs-toggle="modal" (click)="deleteProyect(Proyects.id!)"><img class="img" src="../../../assets/trash.png" alt=""></a> -->
-                                <a type="button"  data-bs-toggle="modal" data-bs-target="#update-proyect-modal"  (click)="getProyect(Proyects.id!)"><img class="img" src="../../../assets/pencil.png" alt="" ></a>
-                            </div>
-                        </div>
-                        <p class="card-text mt-2">{{Proyects.description}}</p>
-                        <a href={{Proyects.link}} class="btn btn-primary" target="_blank">Ver mas</a>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="../../assets/img02.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../../assets/img03.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../../assets/img04.jpg" class="d-block w-100" alt="...">
+                      </div>
                     </div>
+        
+                </div>
+                <div class="card-body posicion-relative">
+                  <h5 class="card-title mt-1 mb-2 color-vl1">Sistema de transporte automatizado</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#modal-project-1" class="btn bg-color2 text-white">Ver mas</a>
                 </div>
             </div>
-                
-
         </div>
+    
+
+
+        <div class="col-md-4 mb-4 mt-4">
+            <div class="card">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="../../assets/img02.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../../assets/img03.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../../assets/img04.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+        
+                </div>
+                <div class="card-body posicion-relative ">
+                  <h5 class="card-title mt-1 mb-2 color-vl1">Sistema de agua presurizada</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#modal-project-2" class="btn bg-color2 text-white">Ver mas</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-4 mb-4 mt-4">
+            <div class="card ">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="../../assets/img02.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../../assets/img03.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../../assets/img04.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+        
+                </div>
+                <div class="card-body posicion-relative ">
+                    <h5 class="card-title mt-1 mb-2 color-vl1">Registro de datos de servicios</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#modal-project-3" class="btn bg-color2 text-white">Ver mas</a>
+                </div>
+            </div>
+        </div>
+
+        
 
     </div>
-
-
-
-    <div class="modal fade" id="update-proyect-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-primary" id="exampleModalLabel2">Actualizar datos de proyecto</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-              <form (ngSubmit)="updateProyect()" novalidate #f="ngForm">
-                <div class="modal-body">
-      
-                    <div class="mb-3">
-                        <label class="form-label">Proyecto:</label>
-                        <input type="text" class="form-control"  id="title" name="title" [(ngModel)]="title">
-                    </div> 
-          
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Descripción:</label>
-                        <textarea class="form-control"  id="description" name="description" [(ngModel)]="description"></textarea>
-                    </div>
-        
-                    <div class="mb-3">
-                        <label  class="form-label">Link:</label>
-                        <input type="text" class="form-control" id="link" name="link" [(ngModel)]="link">
-                    </div> 
-        
-                    <div class="mb-3 justify-content-start">
-                        <label  class="form-label">Imagen del proyecto:</label>
-                        <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" (change)="loadImageDOM($event)" accept=".jpg, .jpeg, .png">
-                    </div> 
-          
-                    <div class=" d-flex justify-content-center">
-                        <img src={{proyectImageUrl}} class="img-recortada" alt=" ">
-                    </div> 
     
-                </div>
-      
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" (click)="deleteProyect(id)">Eliminar</button>
-                  <button type="submit" class="btn btn-success" routerLink="">Modificar</button>
-                </div>
-              
-            </form>
-          </div>
-        </div>
+
+    
+
+
+</div>
+
+
+
+
+
+
+
+<div class="modal fade bd-example-modal-xl" id="modal-project-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary text-center" id="exampleModalLabel2">Sistema de transporte automatizado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink=""></button>
       </div>
+      <form  novalidate #f="ngForm" >
+          <div class="modal-body">
 
-
-
-      <div class="modal fade" id="add-proyect-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-primary" id="exampleModalLabel2">Agregar nuevo proyecto</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-              <form (ngSubmit)="addProyect()" novalidate #f="ngForm">
-                <div class="modal-body">
-      
-                  <div class="mb-3">
-                    <label class="form-label">Proyecto:</label>
-                   <input type="text" class="form-control"  id="title" name="title" [(ngModel)]="title">
-                  </div> 
-      
-                  <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Descripción:</label>
-                    <textarea class="form-control"  id="description" name="description" [(ngModel)]="description"></textarea>
-                  </div>
-    
-                  <div class="mb-3">
-                    <label  class="form-label">Link:</label>
-                   <input type="text" class="form-control" id="link" name="link" [(ngModel)]="link">
-                  </div> 
-    
-                  <div class="mb-3 justify-content-start">
-                    <label  class="form-label">Imagen del proyecto:</label>
-                   <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" (change)="loadImageDOM($event)" accept=".jpg, .jpeg, .png">
-                  </div> 
-      
-                  <div class=" d-flex justify-content-center">
-                    <img src={{proyectImageUrl}} class="img-recortada" alt=" ">
-                  </div> 
-    
-                </div>
-      
-                <div class="modal-footer">
-
-                  <button type="submit" class="btn btn-primary">Agregar</button>
-                </div>
+            <div class="mb-5">
+                <p>El Sistema OEE (Overall Equipment Effectiveness) es una métrica de eficiencia utilizada en la manufactura para evaluar 
+                el rendimiento de un equipo, máquina o proceso,</p>
               
-            </form>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <img src="../../assets/project/img01.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img02.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-4 mb-3 ">
+                <img src="../../assets/project/img04.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-4 mb-3 ">
+                <img src="../../assets/project/img06.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-4 mb-3 ">
+                <img src="../../assets/project/img05.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img03.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img07.jpg" class="img-thumbnail" alt="...">
+              </div>
+            </div>
+            
+
           </div>
-        </div>
+
+          <div class="modal-footer">
+
+          </div>
+        
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-xl" id="modal-project-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary text-center" id="exampleModalLabel2">SISTEMA DE AGUA PRESURIZADA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink=""></button>
       </div>
+      <form  novalidate #f="ngForm" >
+          <div class="modal-body">
+
+            <div class="mb-5">
+                <p>El Sistema OEE (Overall Equipment Effectiveness) es una métrica de eficiencia utilizada en la manufactura para evaluar 
+                el rendimiento de un equipo, máquina o proceso,</p>
+              
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <img src="../../assets/project/img01.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img02.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-4 mb-3 ">
+                <img src="../../assets/project/img04.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-4 mb-3 ">
+                <img src="../../assets/project/img06.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-4 mb-3 ">
+                <img src="../../assets/project/img05.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img03.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+
+
+            </div>
+            
+
+          </div>
+
+          <div class="modal-footer">
+
+          </div>
+        
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-xl" id="modal-project-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary text-center" id="exampleModalLabel2">REGISTRO DE DATOS DE SERVICIOS AUXILIARES</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink=""></button>
+      </div>
+      <form  novalidate #f="ngForm" >
+          <div class="modal-body">
+
+            <div class="mb-5">
+                <p>El Sistema OEE (Overall Equipment Effectiveness) es una métrica de eficiencia utilizada en la manufactura para evaluar 
+                el rendimiento de un equipo, máquina o proceso,</p>
+              
+            </div>
+            <div class="row">
+
+
+              <div class="col-md-6 mb-3">
+                <img src="../../assets/project/img08.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img09.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img11.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-6 mb-3 ">
+                <img src="../../assets/project/img10.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+              <div class="col-md-12 mb-3 ">
+                <img src="../../assets/project/img12.jpg" class="img-thumbnail" alt="...">
+              </div>
+
+            </div>
+            
+
+          </div>
+
+          <div class="modal-footer">
+
+          </div>
+        
+      </form>
+    </div>
+  </div>
+</div>

@@ -3,9 +3,20 @@
     text-transform: uppercase;
 }
 
-.img-bg {
-    background-image: url(../../assets/banner.png) ;
-    height: 400px;
+.margin {
+    margin-top: 110px;
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+  .margin {
+    margin-top: 70px;
+    margin-bottom: 0px;
+}
+
+  .margin-text{
+      margin-top: 60px;
+      }
 }
 
 .img{
@@ -17,9 +28,7 @@
     background-color: #ffffff;
     border:0px solid #ffffff;
 }
-.edit{
-    background-color: #cfe8fd;
-}
+
 .relative{
     position: relative;
 }
@@ -152,3 +161,16 @@
         transform: translateX(0%);
       }
   }
+
+  @media only screen and (max-width: 640px) {
+    .banner-1200 {
+    display: none;
+  }
+  }
+  
+  @media only screen and (min-width: 641px) {
+    .banner-800 {
+    display: none;
+  }
+  }
+  

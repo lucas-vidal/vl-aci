@@ -1,10 +1,48 @@
 div{
-    background-color: #2187C8;
-    height: 60px; 
+    height: 110px; 
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+ 
+}
+.bg1{
+    background-color: #303642;
+    opacity: .95;
+
 }
 
 
+@media only screen and (max-width: 800px) {
+    div{
+        height: 70px; 
+    }
+
+    .titulo {
+    
+        margin-left: 0px; /* Alineado con el punto */
+        width: 100%;
+        text-align: center;
+    
+      }
+}
+
+@media only screen and (min-width: 801px) {
+    .titulo {
+    
+        margin-left: 10px; /* Alineado con el punto */
+        width: 350px;
+        text-align: left;
+    
+      }
+}
+
+@media only screen and (min-width: 1024px) {
+    .titulo {
+    
+        margin-left: 10px; /* Alineado con el punto */
+        width: 200px;
+        text-align: center;
+    
+      }
+}
 

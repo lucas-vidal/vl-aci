@@ -1,53 +1,70 @@
-<div class="container p-4 ">
-                    
-    <h2 class="text-center text-primary mb-3 mt-5">Acerca de mi</h2>
-    <div class="col-md-12 card p-3">
-        <div class="justify-content-center align-items-end">
+<div class="bg-color3">
 
-            <div class="col d-flex justify-content-end ">
-                <div class="d-flex align-items-end" *ngIf="loginService.isLoggedIn()">
-                    <a type="button"  data-bs-toggle="modal" data-bs-target="#update-about-modal"><img class="img" src="../../../assets/pencil.png" alt=""></a>
-                </div>
+  <div class="container padding" >
+                      
+  
+      <div class="col-md-12 ">
+          <div class="row ">
+
+    
+            <div class="col-md-6 p-3 posicion-relative">
+              
+              <div class="line"></div>
+              <h1 class="color-vl">Sobre Nosotros</h1>
+              <p class="mt-5 text-left  ">
+                  
+                Somos una empresa en crecimiento en el campo de la automatización industrial y el desarrollo de software aplicado a la industria, 
+                especializada en el diseño, desarrollo y mantenimiento de soluciones tecnológicas para la industria. Con una amplia experiencia en 
+                el mundo de la automatización industrial e iniciando integración IT de sistemas en programación de PLC, electricidad industrial y 
+                gestión de proyectos, estamos comprometidos en proporcionar soluciones de vanguardia que optimizan la eficiencia y la productividad 
+                de nuestros clientes.
+
+              </p>
             </div>
 
-            <p class="p-3 col text-center text-secondary mb-3 ">
-                {{user.about}}                
-            </p>
+            <div class="col-md-6 ">
+              <div>
+                  
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
 
-        </div>
-    </div>
+                    <div class="carousel-item active">
+                      <img src="../../assets/img07.jpg" class="d-block w-100  img-thumbnail" alt="...">
+                      <p></p>
+                    </div>
+
+                    <div class="carousel-item">
+                      <img src="../../assets/img02.jpg" class="d-block w-100  img-thumbnail" alt="...">
+                      <p></p>
+                    </div>
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+
+
+            
+          
+          
+          
+            
+
+          </div>
+      </div>
+  </div>
 </div>
 
 
-<div class="modal fade" id="update-about-modal" tabindex="-1"  aria-hidden="true" *ngIf="user">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-primary" id="exampleModalLabel2">Actualizar acerca de mi</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form (ngSubmit)="updateAbout()" novalidate #f="ngForm" >
-          <div class="modal-body">
-  
-
-              <div class="mb-3 ">
-                <label for="message-text" class="col-form-label">Descripcion:</label>
-                <textarea class="form-control"  id="about" name="about" [(ngModel)]="about">  
-
-                </textarea>
-              </div>
-  
-  
-            </div>
-  
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Modificar</button>
-            </div>
-          
-        </form>
-      </div>
-    </div>
-  </div>
   
   

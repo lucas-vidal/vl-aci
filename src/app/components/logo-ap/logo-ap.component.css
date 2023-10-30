@@ -1,8 +1,36 @@
 #logoAP{
-    width: 140px;
+    width: 95px;
+    margin-left: 5px;
 }
+
+.posicion-relative {
+    position: relative;
+  }
+
+  .titulo {
+    position: absolute;
+    top: 10px; /* Altura desde la parte superior del contenedor */
+    left: 120px; /* Alineado con el punto */
+    bottom: 18px; /* Se extiende hasta la parte inferior del contenedor */
+    width: 200px;
+    text-align: center;
+
+  }
+  
+
 @media only screen and (max-width: 1023px) {
     .ocultar-logo{
-    display:none;
+   
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #logoAP{
+        width: 65px;
+        margin-left: 5px;
+    }
+
+    .titulo {
+        display: none;
     }
 }

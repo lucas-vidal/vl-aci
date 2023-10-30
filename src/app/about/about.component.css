@@ -1,5 +1,80 @@
-img{
-    width: 20px;
-    margin-right: 10px;
-    margin-top: 0px;
+.mt-150 {
+    margin-top: 250px;
+  }
+
+
+.posicion-relative {
+    position: relative;
+  }
+
+.color-vl {
+    color: #008FD5;
+}
+
+.margin-node{
+  margin-left: 25px;
+  margin-top: -10px;
+  position: relative;
+}
+
+.point {
+  position: relative;
+  top: 18px;
+  left: -20px;
+  width: 10px;
+  height: 10px;
+  background-color: #0077B5;
+  border-radius: 50%;
+  border: 2px solid #0077B5;
+}
+
+
+.line {
+  position: absolute;
+  top: 20px; /* Altura desde la parte superior del contenedor */
+  left: -5px; /* Alineado con el punto */
+  bottom: 30px; /* Se extiende hasta la parte inferior del contenedor */
+  width: 2px;
+  background-color: #ccc;
+}
+
+.bg-color1 {
+  background-color: #008FD5;
+}
+
+.bg-color2 {
+  background-color: #303642;
+}
+
+.bg-color2:hover {
+  background-color: #008FD5;
+}
+
+.bg-color3 {
+  background-color: #e7e7e7;
+}
+
+.color-vl1 {
+  color: #008FD5;
+}
+
+.color-vl2 {
+  color: #303642;
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+  .padding {
+    padding-top: 60px; 
+    padding-bottom: 30px;
+}
+}
+
+@media only screen and (min-width: 801px) {
+  .padding {
+    padding-top: 120px; 
+    padding-bottom: 120px;
+}
 }

@@ -6,15 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoAPComponent } from './components/logo-ap/logo-ap.component';
 import { SocialComponent } from './components/social/social.component';
-import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { AboutComponent } from './about/about.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { EducationComponent } from './education/education.component';
 import { ProyectsComponent } from './proyects/proyects.component';
-import { BtnLoginComponent } from './components/btn-login/btn-login.component';
-import { SkillsComponent } from './skills/skills.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuFooterComponent } from './components/menu-footer/menu-footer.component';
 import { MenuHamburgComponent } from './components/menu-hamburg/menu-hamburg.component';
@@ -24,6 +19,10 @@ import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SolutionsComponent } from './solutions/solutions.component';
+import { ServicesComponent } from './services/services.component';
+import { ContactComponent } from './contact/contact.component';
+import { SocialFooterComponent } from './components/social-footer/social-footer.component';
 
 
 @NgModule({
@@ -32,18 +31,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     LogoAPComponent,
     SocialComponent,
-    LoginComponent,
     FooterComponent,
     BannerComponent,
     AboutComponent,
-    ExperienceComponent,
-    EducationComponent,
     ProyectsComponent,
-    BtnLoginComponent,
-    SkillsComponent,
     MenuComponent,
     MenuFooterComponent,
     MenuHamburgComponent,
+    SolutionsComponent,
+    ServicesComponent,
+    ContactComponent,
+    SocialFooterComponent,
 
   ],
   imports: [

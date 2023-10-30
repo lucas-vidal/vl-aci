@@ -1,0 +1,22 @@
+
+img{
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 0px;
+}
+.cambioColor {
+    color:white;
+    opacity: 90%;
+}
+.cambioColor:hover {
+    color:rgb(255, 255, 255);
+    opacity: 100%;
+}
+@media only screen and (max-width: 800px) {
+
+
+    .ocultar-social{
+        display: none;
+        }
+}

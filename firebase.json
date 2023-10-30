@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/lucas-vidal_front",
+    "public": "dist/vlaci",
     "ignore": [
       "firebase.json",
       "**/.*",
