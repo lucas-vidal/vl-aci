@@ -23,6 +23,7 @@ import { SolutionsComponent } from './solutions/solutions.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { SocialFooterComponent } from './components/social-footer/social-footer.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { SocialFooterComponent } from './components/social-footer/social-footer.
     ServicesComponent,
     ContactComponent,
     SocialFooterComponent,
+    LoaderComponent,
 
   ],
   imports: [
